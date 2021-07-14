@@ -2,4 +2,4 @@
 
 ### Developer: Vitor Gabriel da Silva Alves
 
-[![Abrir no Vercel](&#9650;)](https://alurakut-flax-delta.vercel.app/)
+[ U+25B2 Abrir no Vercel](https://alurakut-flax-delta.vercel.app/)
