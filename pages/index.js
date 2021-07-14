@@ -1,6 +1,6 @@
 import MainGrid from "../src/components/MainGrid"
 import Box from "../src/components/Box"
-import { AlurakutMenu, OrkutNostalgicIconSet } from "../src/lib/AlurakutCommons"
+import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from "../src/lib/AlurakutCommons"
 import { ProfileRelationsBoxWrapper } from "../src/components/ProfileRelations"
 
 //const Title = styled.h1`
@@ -12,6 +12,15 @@ function ProfileSidebar(propriedades){
   return(
     <Box>
         <img src ={`https://github.com/${propriedades.githubUser}.png`} style = {{borderRadius: '10px'}}></img>
+        <hr/>
+        <p>
+          <a className="boxLink" href={`https://github.com/${propriedades.githubUser}`}>
+            @{propriedades.githubUser}
+          </a>
+        </p>
+          
+        <hr/>
+        <AlurakutProfileSidebarMenuDefault/>
     </Box>
   )
 }
@@ -38,8 +47,33 @@ export default function Home() {
         </div>
         <div className = "welcomeArea" style = {{gridArea:'welcomeArea'}}>
             <Box>
-              <h1 className = "title">Bem-vindo</h1>
+              <h1 className = "title">Bem-vindo(a)</h1>
               <OrkutNostalgicIconSet/>
+            </Box>
+            <Box>
+              <h2 className = "subTitle">O que você deseja fazer?</h2>
+                <form onSubmit={function handleCreateComunidade(e){
+                      e.preventDefault();
+                      console.log(e);
+                    }   
+                }>
+                  <div>
+                    <input placeholder ="Qual vai ser o nome da sua Comunidade?" 
+                      name="title" 
+                      aria-label="Qual vai ser o nome da sua Comunidade?" 
+                      type = "text"/>
+                  </div>
+                  <div>
+                      <input placeholder ="Coloque uma URL para usar de capa" 
+                      name="image" 
+                      aria-label="Coloque uma URL para usar de capa" 
+                      type = "text"/>
+                  </div>
+                  <button>
+                    Criar Comunidade
+                  </button>
+                </form>
+                  
             </Box>
         </div>
         <div className = "profileRelationsArea" style = {{gridArea:'profileRelationsArea'}}>

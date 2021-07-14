@@ -45,7 +45,7 @@ const Box = styled.div`
     margin-bottom: 14px;
     border-radius: 10000px;
     ::placeholder {
-      color: #333333;
+      color: #808080;
       opacity: 1;
     }
   }
